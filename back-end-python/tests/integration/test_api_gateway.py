@@ -32,7 +32,7 @@ class TestApiGateway(TestCase):
         here we use cloudformation API to find out what the TriviaWebSocketApi URL is
         """
         stack_name = TestApiGateway.get_stack_name()
-
+        boto3.setup_default_session(profile_name='281750582201')
         client = boto3.client("cloudformation")
 
         try:
